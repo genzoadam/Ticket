@@ -12,7 +12,12 @@
 */
 
 Route::get('/', 'TamuController@index');
-Route::get('/cari', 'CariController@index');
+Route::get('/cari', 'TamuController@cari');
+
+Route::post('/cari', [
+	'as' => 'tickets.cari',
+	'uses' => 'TicketsController@cari'
+]);
 
 Auth::routes();
 
